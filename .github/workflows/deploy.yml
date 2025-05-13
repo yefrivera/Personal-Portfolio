@@ -19,4 +19,4 @@ jobs:
           server: ftpupload.net
           username: b12_38966702
           password: 1007745160Yy.
-          local-dir: ./PERSONAL-PORTFOLIO
+          local-dir: ./PERSONAL-PORTFOLIO/
