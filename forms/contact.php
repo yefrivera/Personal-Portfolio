@@ -3,14 +3,16 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "yefrivera11@gmail.com"; // tu correo
+    $to = "yefrivera11@gmail.com";
     $subject = "Mensaje desde el formulario";
     $name = htmlspecialchars($_POST['name'] ?? '');
     $email = filter_var($_POST['email'] ?? '', FILTER_SANITIZE_EMAIL);
     $message = htmlspecialchars($_POST['message'] ?? '');
 
     $body = "Nombre: $name\nCorreo: $email\nMensaje:\n$message";
-    $headers = "From: $name <$email>";
+
+    $headers = "From: Formulario Web <no-reply@portafolio.byethost12.com>\r\n";
+    $headers .= "Reply-To: $email\r\n";
 
     if (mail($to, $subject, $body, $headers)) {
         echo "OK";
