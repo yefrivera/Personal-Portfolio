@@ -20,5 +20,5 @@ jobs:
           username: b12_38966702
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
-          server-dir: /htdocs
+          server-dir: /htdocs/
           dangerous-clean-slate: true
