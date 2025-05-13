@@ -871,32 +871,37 @@
                     </div>
                 </div>
 
-                <form action="https://formsubmit.co/yefrivera11@gmail.com" method="POST" data-aos="fade-up" data-aos-delay="300">
+                <form id="contact-form" action="https://formspree.io/f/mqaqyjwj" method="POST" data-aos="fade-up" data-aos-delay="300">
                 <div class="row gy-4">
                     <div class="col-md-6">
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                    <input type="text" name="name" class="form-control" placeholder="Tu Nombre" required>
                     </div>
 
                     <div class="col-md-6">
-                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                    <input type="email" name="email" class="form-control" placeholder="Tu Correo" required>
                     </div>
 
                     <div class="col-md-12">
-                    <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                    <input type="text" name="subject" class="form-control" placeholder="Asunto" required>
                     </div>
 
                     <div class="col-md-12">
-                    <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
+                    <textarea name="message" class="form-control" rows="6" placeholder="Mensaje" required></textarea>
                     </div>
 
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://portafolio.byethost12.com/gracias.html">
+                    <!-- Mensaje de éxito oculto por defecto -->
+                    <div class="col-md-12 text-center">
+                    <div id="success-message" style="display: none; color: green; font-weight: bold; margin-top: 10px;">
+                        El correo se ha enviado de manera exitosa
+                    </div>
+                    </div>
 
                     <div class="col-md-12 text-center">
-                    <button type="submit">Enviar Mensaje</button>
+                    <button type="submit" class="btn-enviar">📩 Enviar Mensaje</button>
                     </div>
                 </div>
                 </form>
+
 
                 <!-- End Contact Form -->
 
@@ -947,10 +952,47 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-        if (location.protocol !== 'https:') {
-            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
         }
+        }).then(response => {
+        if (response.ok) {
+            form.reset();
+            successMessage.style.display = 'block';
+        } else {
+            alert('Ocurrió un error al enviar el formulario');
+        }
+        });
+    });
     </script>
+
+    <style>
+    .btn-enviar {
+        background-color: #2f89fc;
+        color: white;
+        padding: 12px 24px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .btn-enviar:hover {
+        background-color: #1d6fe1;
+    }
+    </style>
 
 
 </body>
