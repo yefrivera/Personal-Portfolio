@@ -871,35 +871,36 @@
                     </div>
                 </div>
 
-                <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
-                    <div class="row gy-4">
+                <form action="https://formsubmit.co/yefrivera11@gmail.com" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+                <div class="row gy-4">
 
-                        <div class="col-md-6">
-                            <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                        </div>
-
-                        <div class="col-md-6 ">
-                            <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                        </div>
-
-                        <div class="col-md-12">
-                            <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                        </div>
-
-                        <div class="col-md-12">
-                            <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                        </div>
-
-                        <div class="col-md-12 text-center">
-                            <div class="loading">Cargando</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Tu mensaje ha sido enviado. ¡Gracias!</div>
-
-                            <button type="submit">Enviar Mensaje</button>
-                        </div>
-
+                    <div class="col-md-6">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                     </div>
+
+                    <div class="col-md-6">
+                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+
+                    <div class="col-md-12">
+                    <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                    </div>
+
+                    <div class="col-md-12">
+                    <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
+                    </div>
+
+                    <!-- Opcional: evitar captcha de Formsubmit y redirigir al enviar -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://portafolio.byethost12.com/gracias.html">
+
+                    <div class="col-md-12 text-center">
+                    <button type="submit">Enviar Mensaje</button>
+                    </div>
+
+                </div>
                 </form>
+
                 <!-- End Contact Form -->
 
             </div>
@@ -947,6 +948,13 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+        if (location.protocol !== 'https:') {
+            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+        }
+    </script>
+
 
 </body>
 
