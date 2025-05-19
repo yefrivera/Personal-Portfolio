@@ -364,9 +364,10 @@ h6 {
         transition: 0.3s;
         z-index: 9998;
         width: 100%;
+        bottom:63%;
         /*height: 60%;
         /* Ajusta el ancho en dispositivos pequeños */
-        transform: translateX(50%);
+        transform: translateX(55%);
     }
     .navmenu a,
     .navmenu a:focus {
