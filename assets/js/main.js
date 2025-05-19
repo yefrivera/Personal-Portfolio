@@ -240,4 +240,32 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+      const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+        }).then(response => {
+        if (response.ok) {
+            form.reset();
+            successMessage.style.display = 'block';
+        } else {
+            alert('Ocurrió un error al enviar el formulario');
+        }
+        });
+    });
+
+    successMessage.style.display = 'block';
+    setTimeout(() => {
+    successMessage.style.display = 'none';
+    }, 5000); // desaparece en 5 segundos
+
 })();

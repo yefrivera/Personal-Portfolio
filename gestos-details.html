@@ -76,11 +76,11 @@
     <!-- Page Title -->
     <div class="page-title" data-aos="fade">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Reconocimiento de Gestos con CNN+LSTM</h1>
+        <h1 class="mb-2 mb-lg-0">Reconocimiento de Gestos con Redes Neuronales</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Inicio</a></li>
-            <li class="current">Reconocimiento de Gestos con CNN+LSTM</li>
+            <li class="current">Reconocimiento de Gestos con Redes Neuronales</li>
           </ol>
         </nav>
       </div>
@@ -91,49 +91,49 @@
 
       <div class="container" data-aos="fade-up">
 
-        <div class="portfolio-details-slider swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "navigation": {
-                "nextEl": ".swiper-button-next",
-                "prevEl": ".swiper-button-prev"
-              },
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
+      <div class="portfolio-details-slider swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": {
+              "delay": 5000,
+              "disableOnInteraction": false
+            },
+            "slidesPerView": "auto",
+            "navigation": {
+              "nextEl": ".swiper-button-next",
+              "prevEl": ".swiper-button-prev"
+            },
+            "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
             }
-          </script>
-          <div class="swiper-wrapper align-items-center">
+          }
+        </script>
+        <div class="swiper-wrapper align-items-center">
 
-            <div class="swiper-slide">
-              <img src="assets/img/portfolio/app-1.jpg" alt="">
-            </div>
-
-            <div class="swiper-slide">
-              <img src="assets/img/portfolio/product-1.jpg" alt="">
-            </div>
-
-            <div class="swiper-slide">
-              <img src="assets/img/portfolio/branding-1.jpg" alt="">
-            </div>
-
-            <div class="swiper-slide">
-              <img src="assets/img/portfolio/books-1.jpg" alt="">
-            </div>
-
+          <div class="swiper-slide">
+            <video controls autoplay muted loop>
+              <source src="assets/videos/gestos.mp4" type="video/mp4">
+              Tu navegador no soporta el elemento de video.
+            </video>
           </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-pagination"></div>
-        </div>
+
+          <!-- Si necesitas múltiples videos o slides con contenido mixto 
+          <div class="swiper-slide">
+            <video controls autoplay muted loop>
+              <source src="2.mp4" type="video/mp4">
+              Tu navegador no soporta el elemento de video.
+            </video>
+          </div>-->
+
+        </div> 
+        <!--  <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div> -->
+      </div>
 
         <div class="row justify-content-between gy-4 mt-4">
 
@@ -141,18 +141,25 @@
             <div class="portfolio-description">
               <h2>Descripción general</h2>
               <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
-              <p>
-                Amet consequatur qui dolore veniam voluptatem voluptatem sit. Non aspernatur atque natus ut cum nam et. Praesentium error dolores rerum minus sequi quia veritatis eum. Eos et doloribus doloremque nesciunt molestiae laboriosam.
+                <strong>Arquitectura Híbrida CNN-LSTM:</strong> Sistema desarrollado en Python que combina redes convolucionales (CNN) para extracción de características espaciales y redes recurrentes (LSTM) para análisis temporal, capaz de reconocer gestos manuales complejos en secuencias de video con un accuracy del 92.3% en pruebas de validación.
               </p>
 
               <p>
-                Impedit ipsum quae et aliquid doloribus et voluptatem quasi. Perspiciatis occaecati earum et magnam animi. Quibusdam non qui ea vitae suscipit vitae sunt. Repudiandae incidunt cumque minus deserunt assumenda tempore. Delectus voluptas necessitatibus est.
+                <strong>Pipeline de procesamiento:</strong> 
+                <ul>
+                  <li>Preprocesamiento con OpenCV (detección de manos mediante MediaPipe, normalización de imágenes a 128x128 píxeles)</li>
+                  <li>Modelo CNN (3 capas convolucionales + max-pooling) para extraer patrones espaciales</li>
+                  <li>Capas LSTM bidireccionales para aprender dependencias temporales en secuencias de 30 frames</li>
+                  <li>Clasificación final con capas densas y softmax</li>
+                </ul>
               </p>
 
               <p>
-                Sunt voluptatum sapiente facilis quo odio aut ipsum repellat debitis. Molestiae et autem libero. Explicabo et quod necessitatibus similique quis dolor eum. Numquam eaque praesentium rem et qui nesciunt.
+                <strong>Tecnologías clave:</strong> TensorFlow/Keras para el modelo neuronal, OpenCV para procesamiento de video, MediaPipe para detección de articulaciones manuales, y NumPy para manipulación matricial. El sistema se optimizó con técnicas de aumento de datos (rotaciones, cambios de brillo) y dropout (0.5) para evitar overfitting.
+              </p>
+
+              <p>
+                <strong>Aplicaciones:</strong> Control de interfaces sin contacto, sistemas de traducción de lengua de señas, interacción humano-computadora accesible. El modelo puede ejecutarse en tiempo real (15 FPS) en hardware estándar gracias a la optimización con TensorRT.
               </p>
 
             </div>
@@ -165,8 +172,8 @@
                 <li><strong>Categoría</strong> Inteligencia Artificial/Visión por computadora</li>
                 <li><strong>Cliente</strong> N/A</li>
                 <li><strong>Fecha del Proyecto</strong> Mayo, 2025</li>
-                <li><strong>URL del Proyecto</strong> <a href="#">www.example.com</a></li>
-                <li><a href="#" class="btn-visit align-self-start">Visitar el sitio web</a></li>
+                <!-- <li><strong>URL del Proyecto</strong> <a href="#">www.example.com</a></li>
+                <li><a href="#" class="btn-visit align-self-start">Visitar el sitio web</a></li> -->
               </ul>
             </div>
           </div>
